@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+            *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    
+    }
+    
+    body
+    {
+        background: lightblue;
+        justify-content:center;
+        align-items: center;
+        min-height: 100vh;    
+    }
+    
+    
+    
+    /*cv form*/
+    #cv_form {
+        display: block;  /* Ensure form is visible */
+        width: 100%;
+        max-width: 1200px;
+        margin-bottom: 30px;
+    }
+
+    body #cv_form h1 
+    {
+        font-weight: 600;
+        font-size: 50px;
+        color:#003147;
+    }
+
+
+
+
+    
+    body
+    {
+        background: lightblue;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        min-height: 100vh;    
+    }
+    
+    
+    body .flex
+    {
+        flex-direction: column;
+    }
+
+
+
+    
+    /*CV template*/
+    #cv_template
+    {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        min-height: 1000px;
+        margin: 50px auto;
+        background: #fff;
+        display:grid;
+        grid-template-columns: 1fr 2fr;
+        box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1)
+        
+    }
+    
+
+
+
+    /*cv template left side*/
+    #cv_template .row .leftbackground 
+    {
+        height: 100%;
+        position: relative;
+        background: #003147;
+        width: 40px;
+        padding: 40px 10px;
+    }
+    
+    
+    .leftbackground .profiletext
+    {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+
+    .leftbackground .profiletext h2
+    {
+        color: #fff;
+        font-size: 1 cm;
+        margin-top: 30px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 600;
+        line-height: 1cm;
+        white-space: nowrap;
+    
+    }
+    
+    
+    .leftbackground .profiletext span
+    {
+        font-size: 0.65cm;
+        font-weight: 300;
+        margin-top: 5px;
+        color: black;
+        line-height: 0.5cm;
+        
+    }
+    
+    
+    .leftbackground .profiletext .imagebox
+    {
+        position: relative;
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    
+    
+    .profiletext .imagebox .myimg
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
+    
+    
+    .profiletext hr
+    {
+      color: #fff;  
+      opacity: 50%;
+      width: 70%; 
+      margin: 20px auto;
+    }
+    
+
+    .contactinfo
+    {
+        padding-top:40px;
+    
+    }
+    
+
+    .contactinfo .title
+    { 
+        color: #fff;
+        text-transform:uppercase;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom:20px;
+        line-height: 0.5cm;
+    
+    }
+    
+
+    .contactinfo ul
+    {
+        position: relative;
+        padding-left: 10px;
+        list-style: none;
+    
+    }
+    
+
+    .contactinfo ul li
+    {
+        position:relative;
+        list-style: none;
+        margin: 5px 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    
+    .contactinfo ul li .icon
+    {
+        display:inline-block;
+        width: 40px;
+        font-size: 18px;
+        color: #03a9f4;
+        text-align: justify;
+        margin-right: 10px;
+    }
+    
+
+    .contactinfo ul li .text
+    {
+        color: #fff;
+        font-weight:300;
+    }
+    
+
+    .contactinfo.education
+    {
+        margin-top: 30px;
+        padding-top: 30px;
+        text-align: left;
+        margin-left: 20px;
+        
+    }
+    
+
+    .contactinfo.education h3
+    {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        margin-left: 0;
+        text-align: center;
+    }
+    
+
+    .contactinfo.education ul
+    {
+        list-style-type: none;
+        padding-left: 0;
+        margin-left: 0;
+        
+    }
+    
+
+    .contactinfo.education li
+    {
+        margin-bottom:25px;
+        padding-bottom: 15px;
+        padding-left: 0;
+        display: flex;
+        flex-direction:column;
+        align-items:flex-start;
+        text-align: left;
+    
+    }
+    
+    
+    .contactinfo.education h5
+    {
+        color: #03a9f4;
+        font-weight:300;
+        margin-bottom: 5px;
+        margin-left: 0;
+    }
+    
+
+    .contactinfo.education h4:nth-child(2)
+    {
+        color:#fff;
+        font-weight:500;
+    }
+    
+
+    .contactinfo.education h4
+    {
+        color:#fff;
+        font-weight:300;
+        margin-left: 0;
+        font-size: medium;
+    }
+    
+    
+    
+
+    /*right side of CV template*/
+    
+    #cv_template .row .rightbackground 
+    {
+        position: relative;
+        background: #fff;
+        padding: 40px;
+     
+    }
+    
+    .about
+    {
+        margin-bottom: 50px;
+        margin-top: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .about:last-child
+    { 
+        margin-bottom: 0;
+    }
+    
+    .about .title2
+    {
+        color:#003147;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        
+        
+    }
+    
+    .about
+    {
+        margin-bottom: 30px;
+    }
+    
+    
+    .about p
+    {
+        color:#333;
+        text-align: justify;
+       
+    
+    }
+    
+    .about .box
+    {
+        display: flex;
+        flex-direction: row;
+        margin: 20px 0;
+        
+    }
+    
+    .about .box .year_company
+    {
+        min-width: 150px;
+    }
+    
+    
+    .about .box .year_company h6
+    {
+        text-transform: uppercase;
+        color: #848c90;
+        font-weight:600;
+    }
+    
+    .about .box .text h4
+    {
+        text-transform:uppercase;
+        color: #2a7da2;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    
+    .interest ul{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+    
+    
+    .interest ul li
+    {
+        list-style: disc;
+        color: #848c90;
+        font-weight: 500;
+        margin: 10px 0;
+    }
+
+
+
+    /*media queries*/
+
+    @media (max-width: 1000px) 
+{
+    .container
+    {
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+    .interest ul
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 1000px)
+{
+    .container
+    {
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+    .interest ul
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px)
+{
+    .about .box
+    {
+        flex-direction: column;
+    }
+
+    .about .box .year_company
+    {
+        margin-bottom: 5px;
+    }
+
+    .interest ul
+    {
+        grid-template-columns: repeat(1,1fr) ;
+    }
+
+    .skills .box
+    {
+        grid-template-columns: repeat(1,1fr) ;
+    }
+}

@@ -1,0 +1,617 @@
+<!--CV generator using HTML, CSS, JavaScript, Bootstrap-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+        <title>Resume Generator</title>
+
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+        <!--CSS-->
+        <link rel = "stylesheet" type = "text/css" href="generatorCss.css">
+    </head> 
+
+
+    <body>
+        <!--HTML-->
+
+<div class="flex">
+
+
+        <!--CV form-->
+
+        <div class = "container" id="cv_form">
+            <h1 class="text-center my-2">RESUME GENERATOR</h1>
+            <p class="text-center">Group-7</p>
+        
+            <div class = "row">
+                <div class ="col-md-6">
+                    <!--first col-->
+                    <h3> PERSONAL INFORMATION</h3>
+
+
+                    <div class="form-group mt-4">
+                        <label for="nameField">Full Name</label>
+                        <input
+                          type="text" 
+                          id="nameField" 
+                          placeholder="Enter here" 
+                          class="form-control">
+                    </div>
+
+
+                    <div class ="form-group mt-4">
+                        <label for="workField">Field of work</label>
+                        <input
+                          type="text" 
+                          id="workField" 
+                          placeholder="Enter here" 
+                          class="form-control"> 
+                    </div>
+
+
+                    <p class="text-secondary my-4">Contact Information</p>
+
+
+                    <div class ="form-group mt-4">
+                        <label for="contactField">Contact Number</label>
+                        <input
+                          type="text" 
+                          id="contactField" 
+                          placeholder="Enter here"  
+                          class="form-control"> 
+                    </div> 
+
+
+                    <div class ="form-group mt-4">
+                        <label for="mailField">Email-id</label>
+                        <input
+                          type="text" 
+                          id="mailField" 
+                          placeholder="Enter here"  
+                          class="form-control">
+
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+
+
+                    <div class ="form-group mt-4">
+                        <label for="websiteField">Website</label>
+                        <input
+                          type="text" 
+                          id="websiteField" 
+                          placeholder="Enter here" 
+                          class="form-control"> 
+                    </div>
+
+
+                    <div class ="form-group mt-4">
+                        <label for="linkedField">LinkedIn account</label>
+                        <input
+                          type="text" 
+                          id="linkedField" 
+                          placeholder="Enter here"  
+                          class="form-control"> 
+                    </div>
+
+
+                    <div class ="form-group mt-4 mb-4">
+                        <label for="locationField">Location</label>
+                        <input
+                          type="text" 
+                          id="locationField" 
+                          placeholder="Enter here" 
+                          class="form-control"> 
+                    </div>
+                </div>
+
+
+                <div class ="col-md-6">
+                    <!--second col-->
+                    <h3> PROFESSIONAL INFORMATION</h3>
+ 
+                    <div class ="form-group mt-4">
+
+                        <label for="profile">Profile</label>
+                        <textarea placeholder = "Enter an overview about yourself" id = "profile_overview" class ="form-control" rows ="5"></textarea>
+                    </div>
+
+
+                    <div class="form-group mt-4">
+                        <label for="WorkExperience">Work Experience</label>
+
+                       <div class="werow-container" id="workExperienceContainer">
+                        <div class="row werow">
+
+
+                            <div class="col-md-3">
+                                <textarea id="years_worked" placeholder="Specify years worked" class="form-control" rows="3"></textarea>
+                            </div>
+
+
+                            <div class="col-md-9">
+                                <input
+                                    type="text"
+                                    id="designation"
+                                    placeholder="Designation"
+                                    class="form-control">
+
+                                    <div class="col-md-9 mt-2">
+                                        <input
+                                            type = "text"
+                                            id="experience_highlights"
+                                            placeholder="Experience Highlights"
+                                            class="form-control">
+                                    </div>
+                            </div>
+                            </div>
+                            
+                            <div class="container text-center mt-3">
+                                <button onclick="addNewWorkExperience()"   class="btn btn-primary btn-sm" id="work_exp_btn">Add</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <label for="Education">Education</label>
+
+                        <div class="edrow-container" id="educationContainer"></div>
+
+                        <div class="row edrow">
+
+
+                            <div class="col-md-3">
+                                <textarea id="years_studied" placeholder="Specify years of study" class="form-control" rows="3"></textarea>
+                            </div>
+
+
+                            <div class="col-md-9">
+                                <input
+                                    type="text"
+                                    id="degree"
+                                    placeholder="Degree/Class"
+                                    class="form-control">
+
+                                    <div class="col-md-9 mt-2">
+                                        <input
+                                            type = "text"
+                                            id="institution"
+                                            placeholder="Institution"
+                                            class="form-control">
+                                    </div>
+                            </div>
+                            
+
+                            <div class="container text-center mt-3">
+                                <button class="btn btn-primary btn-sm" id="education_btn">Add</button>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group mt-4">
+                        <label for="interests">Interests</label> 
+                        <div id="interestsContainer">
+                            <input type="text" id="interests" placeholder="Your interest" class="form-control">
+                        </div>
+                        
+                        <div class="container text-center mt-3">
+                            <button class="btn btn-primary btn-sm" id="interests_btn" onclick="addNewInterest()" >Add</button>
+                        </div>
+                    </div>
+                    
+
+                    
+
+                </div>
+            </div>  
+            <div class="container text-center mt-3">
+                <button class="btn btn-primary btn-lg" onclick="GenerateCV()">Generate CV</button>
+            </div>
+        </div>
+
+
+
+
+
+        <!--CV template-->
+
+        <div class="container" id="cv_template">
+            <div class="row">
+
+                <!--left side-->
+                <div class="col text-center leftbackground"> 
+
+                    <div class = "row text-center profiletext">
+                   
+                        <div class = "imagebox">
+                            <img src ="DefaultAvatar.jpg" alt="" class="img-fluid myimg">
+                        </div>
+
+                        <h2 id="nameFieldTemp">RIDHI SHARMA</h2><br><span id="workFieldTemp">Web Developer</span>
+
+                    </div>
+                     <hr color="#fff">
+
+                    <div class="container contactinfo">
+
+                        <h3 class="title">CONTACT INFO</h3>
+
+                        <ul id="contactinfoTemp">
+                            <li>
+                                <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                <span class="text" id="contactFieldTemp">+91 12345 67899</span>
+                            </li>
+            
+
+                            <li>
+                                <span class="icon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+                                <span class="text" id="mailFieldTemp">ridhisharma@gmail.com</span>
+                            </li>
+                            
+
+                            <li>
+                                <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i></span>
+                                <span class="text" id="websiteFieldTemp">www.mywebsite.com</span>
+                            </li>
+            
+
+                            <li>
+                                <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                                <span class="text" id="linkedFieldTemp">www.linkedin.com</span>
+                            </li>
+            
+                            
+                            <li>
+                                <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>  
+                                <span class="text" id="locationFieldTemp">Mumbai, Maharashtra</span>
+                            </li>
+                        </ul>
+
+                        
+                    </div>
+
+                    <div class="contactinfo education">
+
+                        <h3 class="title">Education</h3>
+                        <ul id="educationTemp">
+                            <li>
+                                <h5 id="years_studiedTemp">2014 - 2016</h5>
+                                <h4 id="degreeTemp">Master Degree in Computer Science</h4>
+                                <h4 id="institutionTemp">HBTI - Kanpur</h4>   
+                            </li>
+           
+                            <li>
+                                <h5 id="years_studiedTemp">2009 - 2014</h5>
+                                <h4 id="degreeTemp">Bachelor Degreee in Computer Science</h4>
+                                <h4 id="institutionTemp">Delhi University</h4>
+                            </li>
+                           
+
+                            <li>
+                                <h5 id="years_studiedTemp">2005 - 2009</h5>
+                                <h4 id="degreeTemp">Matriculation</h4>
+                                <h4 id="institutionTemp">Delhi Public School</h4>
+                            </li>
+                        </ul>
+           
+                   </div>
+                </div>
+                    
+                </div>
+            
+
+                <!--right side-->
+                <div class="col text-right rightbackground">     
+
+                    <div class ="about">
+
+                        <h2 class="title2" > Profile </h2>
+
+                        <p id="profile_overviewTemp">Creative UI/UX designer and developer with over 8 years of experience. I'm proficient in conducting projects and passionate about making environment and user-friendly designs.
+                            Skilled in prototyping and conducting research to enhance product usability and aesthetics, the highlight of my career includes leading a UI overhaul tht increased user engagement by 40%, and recieving an award for innovative designs.
+                             I am excited to contribute my passion and knowledge, for user centric designs and escalate user experiences.
+                        </p>
+
+                    </div>
+
+                    <div class="about">
+
+                        <h2 class="title2">Work Experience</h2>
+                        <div class="box" id="workExperienceContainerTemp">
+
+                            <div class="year_company" id="years_workedTemp">
+                                <h6>2024 - Present</h6>
+                            </div>
+
+                            <div class="text">
+                                <h4 id="designationTemp">Senior UX Developer</h4>
+                                <p id="experience_higlightsTemp">- Developed and implemented a new UI framework, increasing app performance by 25%.<br>- Collaborated with UX designers to create user centric designs.<br>- Optimized website responsiveness for mobile devices, leading to a 50% hike in mobile traffic.</p>
+                            </div>
+                        </div>
+            
+                        <div class="box">
+
+                            <div class="year_company" id="years_workedTemp">
+                                <h6>2022 - 2023</h6>
+                            </div>
+
+                            <div class="text">
+                                <h4 id="designationTemp">UX/UI Developer</h4>
+                                <p id="experience_higlightsTemp">- Worked closely with backend developers to ensure seamless integration of new UI components.<br>- Utilized HTML and CSS to create visually appealing and responsive designs
+                                </p>
+                            </div>
+                        </div>
+            
+                        <div class="box">
+
+                            <div class="year_company" id="years_workedTemp">
+                                <h6>2022 - 2016</h6>
+                            </div>
+                            <div class="text">
+                                <h4 id="designationTemp">Junior UX/UI Designer</h4>
+                                <p id="experience_higlightsTemp">- Collaborated with product heads to align UI designs with business goals and user demands.<br>- Created frameworks and prototypes to visualize designs concepts.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about interest">
+
+                        <h2 class="title2">Interests</h2>
+                        <ul interTemp>
+                            <li id="interestsContainerTemp">Coding</li>
+                            <li id="interestsContainerTemp">Reading</li>
+                            <li id="interestsContainerTemp">Cooking</li>
+                            <li id="interestsContainerTemp">Singing</li>
+                            <li id="interestsContainerTemp">Dancing</li>
+                            <li id="interestsContainerTemp">Gaming</li>
+                        </ul>
+                    </div>
+
+                    
+                        
+                   
+                    
+                   
+
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    
+
+    <!--JAVASCRIPT-->
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     
+     <script> 
+     
+     function addNewWorkExperience() {
+
+        
+        const container = document.querySelector('.werow');
+
+
+        const newRow = document.createElement('div');
+        newRow.classList.add('row', 'align-items-start','werow', 'mt-2'); 
+
+        
+
+        const col1 = document.createElement('div');
+        col1.classList.add('col-md-3'); 
+        col1.style.display = 'flex';
+        col1.style.flexDirection = 'column';  
+        const textarea = document.createElement('textarea');
+        textarea.classList.add('form-control');
+        textarea.setAttribute('placeholder', 'Specify years worked');
+        textarea.setAttribute('rows', '3');
+        textarea.setAttribute('name', 'years_worked[]'); 
+        col1.appendChild(textarea);
+
+
+        
+        const col2 = document.createElement('div');
+        col2.classList.add('col-md-9'); 
+        col2.style.display = 'flex';
+        col2.style.flexDirection = 'column'; 
+        col2.style.gap = '10px'; 
+
+        
+
+        const designationInput = document.createElement('input');
+        designationInput.classList.add('form-control');
+        designationInput.setAttribute('type', 'text');
+        designationInput.setAttribute('placeholder', 'Designation');
+        designationInput.setAttribute('name', 'designation[]'); 
+        col2.appendChild(designationInput);
+
+
+        
+        const experienceInput = document.createElement('input');
+        experienceInput.classList.add('form-control');
+        experienceInput.setAttribute('type', 'text');
+        experienceInput.setAttribute('placeholder', 'Experience Highlights');
+        experienceInput.setAttribute('name', 'experience_highlights[]'); 
+        col2.appendChild(experienceInput);
+
+
+        
+        newRow.appendChild(col1);
+        newRow.appendChild(col2);
+
+        
+        
+        container.appendChild(newRow);
+
+        
+        
+    }
+
+    
+
+
+    function addNewEducation() {
+        
+        const container = document.querySelector('.edrow');
+
+        
+        const newRow = document.createElement('div');
+        newRow.classList.add('row', 'edrow','align-items-start' ,'mt-2', );
+        
+        const col1 = document.createElement('div');
+        col1.classList.add('col-md-3'); 
+        col1.style.display = 'flex';
+        col1.style.flexDirection = 'column';
+        const textarea = document.createElement('textarea');
+        textarea.classList.add('form-control');
+        textarea.setAttribute('placeholder', 'Specify years of study');
+        textarea.setAttribute('rows', '3');
+        textarea.setAttribute('name', 'years_studied[]'); 
+        col1.appendChild(textarea);
+
+
+        const col2 = document.createElement('div');
+        col2.classList.add('col-md-9'); 
+        col2.style.display = 'flex';
+        col2.style.flexDirection = 'column'; 
+        col2.style.gap = '10px'; 
+
+        
+        const degreeInput = document.createElement('input');
+        degreeInput.classList.add('form-control');
+        degreeInput.setAttribute('type', 'text');
+        degreeInput.setAttribute('placeholder', 'Degree/Class');
+        degreeInput.setAttribute('name', 'degree[]'); 
+        col2.appendChild(degreeInput);
+
+        
+        const institutionInput = document.createElement('input');
+        institutionInput.classList.add('form-control');
+        institutionInput.setAttribute('type', 'text');
+        institutionInput.setAttribute('placeholder', 'Institution');
+        institutionInput.setAttribute('name', 'institution[]');
+        col2.appendChild(institutionInput);
+
+        
+        newRow.appendChild(col1);
+        newRow.appendChild(col2);
+
+        
+        container.appendChild(newRow);
+
+       
+    }
+
+    
+
+    document.getElementById('education_btn').addEventListener('click', addNewEducation);
+
+    container.insertBefore(newRow, addButton.parentNode);
+
+    function addNewInterest() {
+        
+        const interestsContainer = document.getElementById("interestsContainer");
+
+        
+        const newInterestInput = document.createElement("input");
+        newInterestInput.type = "text";
+        newInterestInput.classList.add("form-control", "mb-2", "mt-2"); 
+        newInterestInput.placeholder = "Your interest"; 
+
+        
+        interestsContainer.appendChild(newInterestInput);
+    }
+
+    
+    document.getElementById("interests_btn").addEventListener("click", function(event) {
+        event.preventDefault(); 
+        addNewInterest(); 
+    });
+
+
+
+
+
+function GenerateCV(){
+    let nameField =document.getElementById("nameField").value;
+    let nameFieldTemp=document.getElementById("nameFieldTemp");
+    nameFieldTemp.innerHTML=nameField;
+
+
+    let workField =document.getElementById("workField").value;
+    let workFieldTemp=document.getElementById("workFieldTemp");
+    workFieldTemp.innerHTML=workField;
+
+
+    let contactField =document.getElementById("contactField").value;
+    let contactFieldTemp=document.getElementById("contactFieldTemp");
+    contactFieldTemp.innerHTML=contactField;
+
+
+    let mailField =document.getElementById("mailField").value;
+    let mailFieldTemp=document.getElementById("mailFieldTemp");
+    mailFieldTemp.innerHTML=mailField;
+
+
+    let websiteField =document.getElementById("websiteField").value;
+    let websiteFieldTemp=document.getElementById("websiteFieldTemp");
+    websiteFieldTemp.innerHTML=websiteField;
+
+
+    let linkedField =document.getElementById("linkedField").value;
+    let linkedFieldTemp=document.getElementById("linkedFieldTemp");
+    linkedFieldTemp.innerHTML=linkedField;
+
+
+    let locationField =document.getElementById("locationField").value;
+    let locationFieldTemp=document.getElementById("locationFieldTemp");
+    locationFieldTemp.innerHTML=locationField;
+
+
+    let profile_overview =document.getElementById("profile_overview").value;
+    let profile_overviewTemp=document.getElementById("profile_overviewTemp");
+    profile_overviewTemp.innerHTML=profile_overview;
+
+
+    let years_worked =document.getElementById("years_worked").value;
+    let years_workedTemp=document.getElementById("years_workedTemp");
+    years_workedTemp.innerHTML=years_worked;
+
+
+    let designation =document.getElementById("designation").value;
+    let designationTemp=document.getElementById("designationTemp");
+    designationTemp.innerHTML=designation;
+
+
+    let experience_highlights =document.getElementById("experience_highlights").value;
+    let experience_higlightsTemp=document.getElementById("experience_highlightsTemp");
+    experience_highlights.innerHTML=experience_higlightsTemp;
+
+
+    let interestsContainer =document.getElementById("interestsContainer").value;
+    let interestsContainerTemp=document.getElementById("interestsContainerTemp");
+    interestsContainerTemp.innerHTML=interestsContainer;
+
+    
+}
+
+
+</script>
+
+
+    </body>
